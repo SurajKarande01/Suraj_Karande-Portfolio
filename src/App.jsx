@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 
 const PORTFOLIO_DATA = {
     name: "Suraj Karande",
@@ -308,8 +308,8 @@ function App() {
                                 {PORTFOLIO_DATA.journey.map((block, idx) => (
                                     <div className="timeline-card" key={idx}>
                                         <div className="card-header-tl">
-                                            <span className="tl-date">{block.dur}</span>
                                             <h4>{block.role}</h4>
+                                            <span className="tl-date">{block.dur}</span>
                                         </div>
                                         <h5 className="tl-org">{block.org}</h5>
                                         <p className="tl-desc">{block.desc}</p>
