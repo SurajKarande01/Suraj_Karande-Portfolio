@@ -78,7 +78,8 @@ const PORTFOLIO_DATA = {
             dur: "Jun – Nov 2025",
             role: "Java Full Stack Trainee",
             org: "Java By Kiran, Pune",
-            desc: "Completed hands-on training focused on Java web development. I built full-stack capstone projects, designed REST APIs with Spring Boot, worked with Hibernate/MySQL databases, and practiced writing clean code."
+            desc: "Completed hands-on training focused on Java web development. I built full-stack capstone projects, designed REST APIs with Spring Boot, worked with Hibernate/MySQL databases, and practiced writing clean code.",
+            certificateUrl: "/JBK - Internship Certificate.pdf"
         },
         {
             dur: "August 2021 – March 2025",
@@ -99,11 +100,41 @@ const PORTFOLIO_DATA = {
         }
     ],
     certifications: [
-        { name: "Online Java Certification Course", org: "IntelliPaat Academy", desc: "Course covering Java fundamentals, multi-threading, collections framework, and database connectivity with JDBC." },
-        { name: "HTML5 - The Language Course", org: "Infosys Springboard", desc: "Learned semantic HTML, modern styling techniques with CSS, and building responsive, accessible page layouts." },
-        { name: "YUVAAI For All", org: "TCSiON (offered by IndiaAI)", desc: "Introductory program on basic neural networks, machine learning processes, and AI applications." },
-        { name: "Introduction to Large Language Models", org: "Google Cloud", desc: "Course on Large Language Models, covering generative AI concepts and basic prompt patterns." },
-        { name: "Use Generative AI for Software Development", org: "IBM SkillsBuild", desc: "Learned to use AI coding assistants and prompts for writing code and prototyping APIs." }
+        { 
+            name: "Online Java Certification Course", 
+            org: "IntelliPaat Academy", 
+            desc: "Course covering Java fundamentals, multi-threading, collections framework, and database connectivity with JDBC.",
+            certificateUrl: "/Intellipat.jpg"
+        },
+        { 
+            name: "HTML5 - The Language Course", 
+            org: "Infosys Springboard", 
+            desc: "Learned semantic HTML, modern styling techniques with CSS, and building responsive, accessible page layouts.",
+            certificateUrl: "/HTML Cource Completion By InfosysSpringBoard.pdf"
+        },
+        { 
+            name: "YUVAAI For All", 
+            org: "TCSiON (offered by IndiaAI)", 
+            desc: "Introductory program on basic neural networks, machine learning processes, and AI applications.",
+            certificateUrl: "/TCS YUVA AI Certificate.pdf"
+        },
+        { 
+            name: "Introduction to Large Language Models", 
+            org: "Google Cloud", 
+            desc: "Course on Large Language Models, covering generative AI concepts and basic prompt patterns.",
+            certificateUrl: "/Google LLM.jpg"
+        },
+        { 
+            name: "Software Engineering Job Simulation", 
+            org: "Commonwealth Bank (via Forage)", 
+            desc: "Completed practical tasks in modifying an existing .NET backend, updating a React/Redux frontend, and writing unit tests.",
+            certificateUrl: "/Forage SE Simulation.pdf"
+        },
+        { 
+            name: "Use Generative AI for Software Development", 
+            org: "IBM SkillsBuild", 
+            desc: "Learned to use AI coding assistants and prompts for writing code and prototyping APIs." 
+        }
     ]
 };
 
@@ -186,7 +217,7 @@ function App() {
                                 <div className="portrait-side">
                                     <div className="image-frame">
                                         <img 
-                                            src="/Sk.jpeg" 
+                                            src="/Suraj-Photo.jpeg" 
                                             alt="Suraj Karande" 
                                             className="portrait"
                                             onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop' }}
@@ -313,6 +344,11 @@ function App() {
                                         </div>
                                         <h5 className="tl-org">{block.org}</h5>
                                         <p className="tl-desc">{block.desc}</p>
+                                        {block.certificateUrl && (
+                                            <a href={block.certificateUrl} target="_blank" rel="noreferrer" className="cert-link">
+                                                <i className="fa-solid fa-file-pdf"></i> View Certificate
+                                            </a>
+                                        )}
                                     </div>
                                 ))}
                             </div>
@@ -326,6 +362,11 @@ function App() {
                                             <p className="c-name">{cert.name}</p>
                                             <p className="c-org">{cert.org}</p>
                                             {cert.desc && <p className="c-desc">{cert.desc}</p>}
+                                            {cert.certificateUrl && (
+                                                <a href={cert.certificateUrl} target="_blank" rel="noreferrer" className="cert-link">
+                                                    <i className="fa-solid fa-file-pdf"></i> View Certificate
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                 ))}
