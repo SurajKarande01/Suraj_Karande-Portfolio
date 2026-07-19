@@ -198,7 +198,7 @@ export default function GithubStats() {
     <section id="github" className="mx-auto max-w-6xl px-6 py-28">
       <SectionHeading
         title="GitHub Profile"
-        subtitle="Showcasing my projects, code quality, and continuous learning through practical software development."
+        subtitle="Showcasing my projects, code quality and continuous learning through practical software development."
       />
 
       {loading && <SkeletonLoader />}
@@ -266,7 +266,7 @@ export default function GithubStats() {
                   GitHub Activity Graph
                 </h3>
                 <p className="mt-1 text-xs text-text-muted">
-                  Live tracking of contributions, commits, and activity timeline.
+                  Contributions, commits and activity timeline.
                 </p>
 
                 <div className="mt-6 flex justify-center items-center">
@@ -285,7 +285,7 @@ export default function GithubStats() {
                 Technologies I Work With
               </h2>
               <p className="mt-1 text-xs text-text-muted mb-5">
-                Automatically extracted tech ecosystem from my public projects.
+                 Tech ecosystem from my public projects.
               </p>
 
               <div className="flex flex-wrap gap-3">
