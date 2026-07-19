@@ -1,33 +1,57 @@
-# Suraj Karande - Portfolio
+# Suraj Karande - Portfolio Website 🚀
 
-A premium, highly interactive, and responsive portfolio website designed using React, Vite, and custom CSS. 
+A premium, highly interactive, and responsive portfolio website highlighting full-stack capabilities, backend systems engineering, and modern frontend designs. Built with **React.js**, **Vite**, **Tailwind CSS**, and **Framer Motion**.
 
-## 🚀 Features
-- **Modern Glassmorphic Design**: Clean and professional visual aesthetics with smooth micro-animations.
-- **Responsive Layout**: Designed to adapt perfectly to all screen sizes, from 4K monitors to small mobile screens.
-- **Detailed Expertise Column**: Segmented breakdown of backend (Java/Spring Boot), frontend (React), and DevOps skillsets.
-- **Academic & Professional Journey Timeline**: Clean visual representation of education, experience, and certificates.
-- **Direct Mail Inquiries**: Interactive contact panel ready for recruitment and collaboration.
+---
+
+## 🎨 New Features & Visual Enhancements
+
+### 1. Swapped Hero Layout with Native Aspect Ratio Photo
+- **Left Column**: High-resolution profile photo (`Suraj-Photo.jpeg`) rendered in its natural/native aspect ratio, nested inside a floating glassmorphic card with an interactive, colorful neon glow border that intensifies on hover.
+- **Right Column**: Typed welcome introduction message with typewriter role animation (`Java Full Stack Developer`, `Spring Boot Developer`, `Backend Engineer`).
+
+### 2. Premium Loader (#24 - Bouncing Dots Wave)
+- Highly polished **Bouncing Dots Wave** loading animation at start.
+- Programmed to exit after exactly **1.0 second** with smooth framer-motion slide/fade transitions.
+- Utilizes a sequence of three custom-colored dots (Blue, Emerald, Indigo) with pulsing glowing drop shadows.
+
+### 3. Live GitHub Integration & Analytics Dashboard
+No manual data! All stats and highlights update dynamically in real time:
+- **Profile Summary Header**: Real-time avatar, bio, handle, and followers/following counts fetched directly from the GitHub API.
+- **Dynamic Stats Grid**: Interactive cards displaying Public Repos, Total Stars, and Followers/Following, powered by animated counters.
+- **Activity Graph**: Live visualization of commits, pull requests, and activity timelines from GitHub.
+- **Ecosystem Tech Stack**: Dynamically compiled from repository topics to highlight technologies currently in use.
+- **Live Profile Stats**: Embeds real-time commits, pull requests, issues logged, and contributions (incorporates private repositories and total all-time commits with cache optimization).
+- **Contribution Streak**: Automatically visualizes total contributions, current active streaks, and longest streaks.
+
+---
 
 ## 🛠️ Tech Stack
-- **Core**: React 18, JavaScript (ES6+), HTML5
-- **Styling**: Vanilla CSS, FontAwesome 6 Icons, Google Fonts (Space Grotesk & Inter)
+- **Frontend Core**: React 18, React Router, Framer Motion, React Icons
+- **State Management**: Zustand
+- **Animations & Effects**: Tailwind CSS, React Type Animation, Canvas Confetti
 - **Build Tool**: Vite
-- **Deployment**: Configured for Vercel and GitHub
+- **Integrations**: GitHub REST APIs, GitHub Readme Stats, Streak Stats
+
+---
 
 ## 📦 Running Locally
-1. Clone the repository:
+
+1. Clone this repository:
    ```bash
    git clone https://github.com/SurajKarande01/Suraj_Karande-Portfolio.git
    ```
-2. Navigate into the directory and install dependencies:
+2. Install the dependencies:
    ```bash
    npm install
    ```
-3. Start the development server:
+3. Run the development server:
    ```bash
    npm run dev
    ```
+4. Access the site in your browser at `http://localhost:5173`.
+
+---
 
 ## 🌐 Deployment
-This repository is pre-configured for direct Vercel deployment. Every push to the `main` branch automatically triggers a build and release cycle on Vercel.
+This repository is configured for automatic deployment on Vercel. Every commit pushed to the `main` branch automatically triggers a production build and release cycle.
