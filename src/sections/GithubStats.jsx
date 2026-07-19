@@ -23,14 +23,18 @@ export default function GithubStats() {
         const repos = await reposRes.json()
 
         const stars = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0)
+        const totalReposWithLang = repos.filter((r) => r.language).length
         const langCount = {}
         repos.forEach((r) => {
           if (r.language) langCount[r.language] = (langCount[r.language] || 0) + 1
         })
         const topLanguages = Object.entries(langCount)
           .sort((a, b) => b[1] - a[1])
-          .slice(0, 5)
-          .map(([lang]) => lang)
+          .slice(0, 4)
+          .map(([name, count]) => ({
+            name,
+            percentage: totalReposWithLang ? Math.round((count / totalReposWithLang) * 100) : 0,
+          }))
 
         if (!cancelled) {
           setStats({
@@ -108,13 +112,40 @@ export default function GithubStats() {
             transition={{ duration: 0.5 }}
             className="grid gap-6 lg:grid-cols-2"
           >
-            <div className="flex items-center justify-center rounded-2xl border border-white/10 bg-card/50 p-4">
-              <img
-                src={`https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&theme=transparent&hide_border=true&title_color=3b82f6&text_color=94a3b8&icon_color=60a5fa&count_private=true`}
-                alt="GitHub Profile Stats"
-                className="w-full max-w-md h-auto"
-                loading="lazy"
-              />
+            <div className="rounded-2xl border border-white/10 bg-card/50 p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="font-display text-xl font-semibold text-text">
+                  Language Distribution
+                </h3>
+                <p className="mt-1 text-xs text-text-muted">
+                  Primary programming languages across my public repositories.
+                </p>
+
+                <div className="mt-6 space-y-4">
+                  {stats && stats.topLanguages ? (
+                    stats.topLanguages.map((lang) => (
+                      <div key={lang.name}>
+                        <div className="flex justify-between text-xs font-mono mb-1">
+                          <span className="text-text-muted">{lang.name}</span>
+                          <span className="text-accent font-semibold">{lang.percentage}%</span>
+                        </div>
+                        <div className="h-2 w-full rounded-full bg-dark/60 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-accent transition-all duration-500"
+                            style={{ width: `${lang.percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="space-y-4">
+                      {Array.from({ length: 4 }).map((_, i) => (
+                        <div key={i} className="h-6 animate-pulse rounded bg-white/5" />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-card/50 p-6">
@@ -171,7 +202,7 @@ export default function GithubStats() {
               </div>
             </div>
             <p className="mt-3 font-mono text-[10px] text-text-muted text-right">
-              *Real-time commit calendar fetched directly from public profile activity.
+              *Real-time commit calendar.
             </p>
           </motion.div>
 
