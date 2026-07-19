@@ -10,7 +10,7 @@ export default function Loader() {
     return () => clearTimeout(t)
   }, [])
 
-  const firstName = profile.name.split(' ')[0]
+  const fullName = profile.name
 
   return (
     <AnimatePresence>
@@ -22,7 +22,7 @@ export default function Loader() {
         >
           <div className="font-mono text-lg text-text">
             <span className="text-accent">const</span> developer ={' '}
-            <span className="text-primary">"{firstName}"</span>
+            <span className="text-primary">"{fullName}"</span>
             <span className="ml-1 inline-block w-2 h-5 bg-accent animate-blink align-middle" />
           </div>
         </motion.div>
