@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { profile } from '../data/profile'
 
 export default function Loader() {
   const [loading, setLoading] = useState(true)
@@ -10,8 +9,6 @@ export default function Loader() {
     return () => clearTimeout(t)
   }, [])
 
-  const fullName = profile.name
-
   return (
     <AnimatePresence>
       {loading && (
@@ -20,10 +17,11 @@ export default function Loader() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="font-mono text-lg text-text">
-            <span className="text-accent">const</span> developer ={' '}
-            <span className="text-primary">"{fullName}"</span>
-            <span className="ml-1 inline-block w-2 h-5 bg-accent animate-blink align-middle" />
+          <div className="relative flex items-center justify-center">
+            {/* Sleek outer spinning ring */}
+            <div className="h-14 w-14 animate-spin rounded-full border-2 border-accent/10 border-t-accent" />
+            {/* Pulsing center glow */}
+            <div className="absolute h-6 w-6 animate-pulse rounded-full bg-accent/20" />
           </div>
         </motion.div>
       )}
