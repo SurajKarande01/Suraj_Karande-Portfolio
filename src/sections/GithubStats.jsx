@@ -6,19 +6,6 @@ import { profile } from '../data/profile'
 
 const USERNAME = 'SurajKarande01'
 
-const langColors = {
-  Java: '#b07219',
-  JavaScript: '#f1e05a',
-  Python: '#3572a5',
-  HTML: '#e34c26',
-  CSS: '#563d7c',
-  TypeScript: '#3178c6',
-  Go: '#00ADD8',
-  Rust: '#dea584',
-  C: '#555555',
-  'C++': '#f34b7d',
-}
-
 function AnimatedCounter({ value }) {
   const [count, setCount] = useState(0)
 
@@ -93,6 +80,7 @@ export default function GithubStats() {
     setLoading(true)
     setError(false)
     try {
+      // 1. Fetch primary profile and repo details
       const [userRes, reposRes] = await Promise.all([
         fetch(`https://api.github.com/users/${USERNAME}`),
         fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100`),
@@ -264,7 +252,7 @@ export default function GithubStats() {
             ))}
           </div>
 
-          {/* Double Columns: Language Dist & Tech Stack */}
+          {/* Double Columns: Activity Graph & Tech Stack */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -312,7 +300,7 @@ export default function GithubStats() {
               </div>
             </div>
           </motion.div>
-          {/* Real-time GitHub Analytics (Stats & Streaks) */}
+          {/* Real-time GitHub Analytics (Stats & Streaks) — live SVG cards that auto-update */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -320,7 +308,7 @@ export default function GithubStats() {
             transition={{ duration: 0.5, delay: 0.08 }}
             className="grid gap-6 md:grid-cols-2"
           >
-            {/* Live Stats Card */}
+            {/* Live Stats Card — shows total stars, commits, PRs, issues, contributed-to */}
             <div className="rounded-2xl border border-white/10 bg-card/50 p-6 flex flex-col justify-between items-center">
               <div className="w-full flex items-center justify-between mb-4">
                 <h3 className="font-display text-lg font-semibold text-text">
@@ -346,7 +334,7 @@ export default function GithubStats() {
               </div>
             </div>
 
-            {/* Live Streak Card */}
+            {/* Live Streak Card — shows total contributions, current streak, longest streak */}
             <div className="rounded-2xl border border-white/10 bg-card/50 p-6 flex flex-col justify-between items-center">
               <div className="w-full flex items-center justify-between mb-4">
                 <h3 className="font-display text-lg font-semibold text-text">
