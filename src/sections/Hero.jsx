@@ -89,33 +89,6 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mx-auto w-full max-w-sm"
-        >
-          <div className="glass rounded-2xl p-1 shadow-card">
-            <div className="flex items-center gap-1.5 rounded-t-xl bg-card/80 px-4 py-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-              <span className="ml-3 font-mono text-xs text-text-muted">profile.js</span>
-            </div>
-            <div className="rounded-b-xl bg-card/60 p-6 font-mono text-sm leading-relaxed text-text-muted">
-              <p><span className="text-accent">const</span> dev = {'{'}</p>
-              <p className="pl-4">name: <span className="text-primary">'{profile.name}'</span>,</p>
-              <p className="pl-4">based: <span className="text-primary">'{profile.location}'</span>,</p>
-              <p className="pl-4">stack: [<span className="text-primary">'Java'</span>, <span className="text-primary">'Spring'</span>, <span className="text-primary">'React'</span>, <span className="text-primary">'MySQL'</span>],</p>
-              <p className="pl-4">focus: <span className="text-primary">'Secure API & Microservices Architecture'</span>,</p>
-              <p className="pl-4">currently: <span className="text-primary">'Java Full Stack Developer Trainee'</span>,</p>
-              <p className="pl-4">status: <span className="text-primary">'open to work'</span></p>
-              <p>{'}'}</p>
-            </div>
-          </div>
-        </motion.div>
-        */}
       </div>
     </section>
   )
