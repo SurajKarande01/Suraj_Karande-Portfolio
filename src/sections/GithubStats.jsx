@@ -321,14 +321,14 @@ export default function GithubStats() {
               </div>
               <div className="w-full flex justify-center items-center py-2 overflow-hidden">
                 <img
-                  src={`https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&theme=transparent&hide_border=true&title_color=3b82f6&icon_color=3b82f6&text_color=ffffff&bg_color=00000000`}
+                  src={`https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&include_all_commits=true&count_private=true&cache_seconds=1800&theme=transparent&hide_border=true&title_color=3b82f6&icon_color=3b82f6&text_color=ffffff&bg_color=00000000`}
                   alt="GitHub Profile Stats"
                   className="w-full max-w-[400px] h-auto filter saturate-[1.1] brightness-[0.9] hover:brightness-100 transition-all duration-300"
                   loading="lazy"
                   onError={(e) => {
                     // Fallback to a backup server if the public instance is rate-limited or down
                     e.target.onerror = null;
-                    e.target.src = `https://github-readme-stats-one.vercel.app/api?username=${USERNAME}&show_icons=true&theme=transparent&hide_border=true&title_color=3b82f6&icon_color=3b82f6&text_color=ffffff&bg_color=00000000`;
+                    e.target.src = `https://github-readme-stats-one.vercel.app/api?username=${USERNAME}&show_icons=true&include_all_commits=true&count_private=true&cache_seconds=1800&theme=transparent&hide_border=true&title_color=3b82f6&icon_color=3b82f6&text_color=ffffff&bg_color=00000000`;
                   }}
                 />
               </div>
