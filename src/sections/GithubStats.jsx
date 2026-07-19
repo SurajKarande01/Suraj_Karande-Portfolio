@@ -108,11 +108,14 @@ export default function GithubStats() {
             transition={{ duration: 0.5 }}
             className="grid gap-6 lg:grid-cols-2"
           >
-            <img
-              src={`https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${USERNAME}&theme=github_dark`}
-              alt="GitHub Profile Summary"
-              className="w-full h-64 rounded-2xl border border-white/10"
-            />
+            <div className="flex items-center justify-center rounded-2xl border border-white/10 bg-card/50 p-4">
+              <img
+                src={`https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&theme=transparent&hide_border=true&title_color=3b82f6&text_color=94a3b8&icon_color=60a5fa&count_private=true`}
+                alt="GitHub Profile Stats"
+                className="w-full max-w-md h-auto"
+                loading="lazy"
+              />
+            </div>
 
             <div className="rounded-2xl border border-white/10 bg-card/50 p-6">
               <h2 className="font-display text-xl font-semibold text-text">
@@ -144,6 +147,32 @@ export default function GithubStats() {
                 ))}
               </div>
             </div>
+          </motion.div>
+
+          {/* Real-time GitHub Contribution Calendar Graph */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="rounded-2xl border border-white/10 bg-card/50 p-6"
+          >
+            <h3 className="font-display text-lg font-semibold text-text mb-4">
+              Contribution Activity
+            </h3>
+            <div className="overflow-x-auto">
+              <div className="min-w-[650px] w-full py-2">
+                <img
+                  src={`https://ghchart.rshah.org/3B82F6/${USERNAME}`}
+                  alt={`${USERNAME}'s GitHub Contribution Chart`}
+                  className="w-full filter saturate-[1.2] opacity-90 hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <p className="mt-3 font-mono text-[10px] text-text-muted text-right">
+              *Real-time commit calendar fetched directly from public profile activity.
+            </p>
           </motion.div>
 
           <a
