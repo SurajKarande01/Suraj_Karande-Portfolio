@@ -22,8 +22,31 @@ export default function Hero() {
       <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-primary/20 blur-[100px] animate-float-slow" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/10 blur-[120px] animate-float" />
 
-      <div className="relative mx-auto max-w-4xl px-6 w-full">
+      <div className="relative mx-auto max-w-5xl px-6 w-full grid gap-12 lg:grid-cols-12 items-center">
+        {/* Dynamic User Photo Container - Now on the left on desktop */}
         <motion.div
+          className="lg:col-span-5 order-1 lg:order-1 flex justify-center lg:justify-start"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+        >
+          <div className="relative group w-full max-w-[320px]">
+            {/* Ambient colorful glow behind photo */}
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary to-accent opacity-25 blur-lg group-hover:opacity-45 transition duration-500" />
+            
+            <div className="relative w-full h-auto overflow-hidden rounded-2xl border border-white/10 bg-card/40 backdrop-blur-sm shadow-2xl">
+              <img
+                src="/Suraj-Photo.jpeg"
+                alt="Suraj Karande"
+                className="w-full h-auto object-contain transition duration-500 group-hover:scale-105"
+              />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Welcome Text Message - Now on the right on desktop */}
+        <motion.div
+          className="lg:col-span-7 order-2 lg:order-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -88,7 +111,6 @@ export default function Hero() {
             </a>
           </div>
         </motion.div>
-
       </div>
     </section>
   )
