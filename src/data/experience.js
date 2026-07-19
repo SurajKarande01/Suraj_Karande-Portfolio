@@ -20,6 +20,7 @@ export const education = [
     school: 'Department of Technology, Shivaji University, Kolhapur',
     duration: 'August 2021 – March 2025',
     score: 'CGPA: 6.85 / 10',
+    description: 'Built solid foundations in Core Java, Object-Oriented Programming (OOP), Data Structures, Database Systems (RDBMS), and software design principles. Completed hands-on engineering labs and capstone projects that laid the groundwork for my career in full stack development.',
   },
   {
     id: 'hsc',
@@ -27,6 +28,7 @@ export const education = [
     school: 'Ligade Patil Jr College of Science, Karad',
     duration: 'March 2021',
     score: 'Percentage: 86.67%',
+    description: 'Focused primarily on Physics, Chemistry, and Mathematics. This rigorous curriculum developed my mathematical logic and analytical problem-solving skills.',
   },
   {
     id: 'ssc',
@@ -34,6 +36,7 @@ export const education = [
     school: 'Balwadi Highschool, Balwadi',
     duration: 'March 2019',
     score: 'Percentage: 82.80%',
+    description: 'Acquired core academic foundations. Excelled in mathematics and science subjects, sparking my initial interest in computer hardware and software technologies.',
   },
 ]
 

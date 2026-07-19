@@ -74,9 +74,14 @@ export default function Experience() {
                   <span className="font-mono text-xs text-accent">{edu.duration}</span>
                 </div>
                 <p className="mt-1 text-sm text-text-muted">{edu.school}</p>
-                <p className="mt-3 inline-block rounded-full border border-accent/30 px-3 py-1 font-mono text-xs text-accent">
-                  {edu.score}
-                </p>
+                {edu.description && (
+                  <p className="mt-3 text-sm leading-relaxed text-text-muted/80">{edu.description}</p>
+                )}
+                <div className="mt-4">
+                  <span className="inline-block rounded-full border border-accent/30 px-3 py-1 font-mono text-xs text-accent">
+                    {edu.score}
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
